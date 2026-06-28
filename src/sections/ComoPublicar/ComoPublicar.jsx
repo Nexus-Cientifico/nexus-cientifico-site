@@ -10,7 +10,7 @@ const STEPS = [
   {
     number: '01',
     title: 'Submissão',
-    description: 'Envie seu artigo ou capítulo por e-mail ou pelo formulário de submissão. Nossa equipe acusará o recebimento em até 48 horas.',
+    description: 'Envie seu artigo ou capítulo por e-mail. Nossa equipe acusará o recebimento em até 48 horas.',
     icon: <SubmitIcon />,
   },
   {
