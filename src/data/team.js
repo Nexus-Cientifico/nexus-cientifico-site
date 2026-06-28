@@ -18,7 +18,12 @@ export const team = [
     name: 'Valéria Magalhães',
     role: 'Conselheira Editorial',
     isDirector: false,
-    bio: 'Conselheira editorial com expertise em avaliação de trabalhos acadêmicos e normatização científica.',
+    bio: 'Pesquisadora na interface entre ciência do exercício e saúde cardiovascular, com formação em andamento no Mestrado em Educação. Integra o conselho editorial com rigor clínico-científico e visão interdisciplinar.',
+    specialties: [
+      'Exercício Físico & Reabilitação Cardíaca',
+      'Fisiologia do Exercício',
+      'Mestranda em Educação',
+    ],
     photo: '/images/equipe/valeria2.jpeg',
   },
   {

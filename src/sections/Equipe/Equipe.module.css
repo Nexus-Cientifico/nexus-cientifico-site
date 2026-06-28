@@ -118,6 +118,30 @@
   text-align: center;
 }
 
+/* ── SPECIALTIES ─────────────────────────────────────────────── */
+.specialties {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.specialty {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px var(--space-3);
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+  font-size: var(--text-label-sm);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .grid {
