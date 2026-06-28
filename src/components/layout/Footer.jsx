@@ -29,11 +29,11 @@ export default function Footer() {
         {/* Coluna 1 — Marca */}
         <div className={styles.brand}>
           <Link to="/" className={styles.logoLink}>
-            <LogoMark />
-            <div>
-              <span className={styles.logoNexus}>Nexus</span>
-              <span className={styles.logoCientifico}>Científico</span>
-            </div>
+            <img
+              src="/images/logo.png"
+              alt="Editora Nexus Científico"
+              className={styles.logoImg}
+            />
           </Link>
           <p className={styles.tagline}>
             Conectamos pesquisa e conhecimento à comunidade científica brasileira.
@@ -111,15 +111,6 @@ export default function Footer() {
   )
 }
 
-function LogoMark() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true" className={styles.logoSvg}>
-      <rect width="36" height="36" rx="8" fill="rgba(255,255,255,0.15)" />
-      <path d="M9 27V9l7 11 7-11v18" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="27" cy="18" r="3.5" fill="var(--color-tertiary)" />
-    </svg>
-  )
-}
 
 function InstagramIcon() {
   return (
