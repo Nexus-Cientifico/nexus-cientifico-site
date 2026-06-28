@@ -10,7 +10,12 @@ export const team = [
     name: 'Christiane Cherkasov',
     role: 'Diretora Editorial',
     isDirector: true,
-    bio: 'Fundadora e diretora da Nexus Científico, responsável pela visão editorial e pelo desenvolvimento da plataforma de publicação acadêmica.',
+    bio: 'Fundadora e Diretora Editorial da Nexus Científico, responsável pela visão editorial e pelo desenvolvimento da plataforma de publicação acadêmica. Especialista em Gestão Escolar com Ênfase em Supervisão, Orientação, Administração e Inspeção, e em Psicopedagogia, atualmente Mestranda em Educação.',
+    specialties: [
+      'Gestão Escolar & Supervisão',
+      'Psicopedagogia',
+      'Mestranda em Educação',
+    ],
     photo: '/images/equipe/christiane.jpeg',
   },
   {
