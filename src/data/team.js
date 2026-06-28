@@ -44,7 +44,13 @@ export const team = [
     name: 'Isabel Cristina Santos',
     role: 'Conselheira Editorial',
     isDirector: false,
-    bio: 'Conselheira editorial com ampla experiência em pesquisa acadêmica e gestão de publicações científicas.',
+    bio: 'Especialista em Gestão de Pessoas, Planejamento Tributário e Gestão Escolar, atualmente Mestranda em Educação. Integra o conselho editorial com uma visão ampla que une administração, finanças e educação.',
+    specialties: [
+      'Gestão de Pessoas',
+      'Planejamento Tributário',
+      'Gestão Escolar',
+      'Mestranda em Educação',
+    ],
     photo: '/images/equipe/isabel.jpeg',
   },
 ]
