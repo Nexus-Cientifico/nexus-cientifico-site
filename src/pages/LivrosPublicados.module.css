@@ -91,7 +91,8 @@
   flex-shrink: 0;
 }
 
-.coverSvg {
+.coverSvg,
+.coverImg {
   width: 160px;
   height: 220px;
   border-radius: 3px 6px 6px 3px;
@@ -100,6 +101,11 @@
     4px 4px 20px rgba(26,47,110,0.20),
     0 8px 32px rgba(0,0,0,0.12);
   display: block;
+}
+
+.coverImg {
+  object-fit: cover;
+  object-position: center top;
 }
 
 .coverShadow {
@@ -171,6 +177,13 @@
   color: var(--color-secondary);
   font-weight: var(--weight-semibold);
   letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.bookOrganizer {
+  font-size: var(--text-body-sm);
+  color: var(--color-on-surface-variant);
+  font-style: italic;
   margin: 0;
 }
 
@@ -328,7 +341,8 @@
     justify-content: center;
   }
 
-  .coverSvg {
+  .coverSvg,
+  .coverImg {
     width: 140px;
     height: 192px;
   }

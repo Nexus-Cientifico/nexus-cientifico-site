@@ -14,12 +14,14 @@ const BOOKS = [
     subtitle: 'Disrupções Epistemológicas e Práticas Transformadoras',
     area: 'Educação',
     publisher: 'Nexus Científico Editora',
-    year: 2025,
+    year: 2026,
+    organizer: 'Christiane Moura Cherkasov (Org.)',
     doi: 'https://doi.org/10.5281/zenodo.20932060',
     doiShort: '10.5281/zenodo.20932060',
     description:
       'Uma obra coletiva que reúne pesquisadores e educadores para discutir as transformações epistemológicas contemporâneas, propondo práticas pedagógicas inovadoras que desafiam paradigmas tradicionais e abrem novos horizontes para a educação brasileira.',
     tags: ['Epistemologia', 'Pedagogia', 'Inovação Educacional', 'Pesquisa em Educação'],
+    coverImg: '/images/livros/horizontes-da-educacao.jpg',
     coverAccent: '#B8860B',
   },
 ]
@@ -155,11 +157,18 @@ function BookCard({ book }) {
     <article className={styles.bookCard}>
       {/* Capa */}
       <div className={styles.coverWrapper}>
-        <BookCover
-          title={book.title}
-          subtitle={book.subtitle}
-          accent={book.coverAccent}
-        />
+        {book.coverImg
+          ? <img
+              src={book.coverImg}
+              alt={`Capa de ${book.title}`}
+              className={styles.coverImg}
+            />
+          : <BookCover
+              title={book.title}
+              subtitle={book.subtitle}
+              accent={book.coverAccent}
+            />
+        }
         {/* Sombra de livro */}
         <div className={styles.coverShadow} />
       </div>
@@ -176,8 +185,11 @@ function BookCard({ book }) {
         <h2 className={styles.bookTitle}>{book.title}</h2>
         <p className={styles.bookSubtitle}>{book.subtitle}</p>
 
-        {/* Editora */}
+        {/* Editora + Organizador */}
         <p className={styles.bookPublisher}>{book.publisher}</p>
+        {book.organizer && (
+          <p className={styles.bookOrganizer}>{book.organizer}</p>
+        )}
 
         {/* Descrição */}
         <p className={styles.bookDescription}>{book.description}</p>
