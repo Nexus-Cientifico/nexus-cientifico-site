@@ -1,0 +1,104 @@
+.section {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-background);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+/* ── CARD ─────────────────────────────────────────────────── */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-3);
+  transform: translateY(-3px);
+}
+
+.quoteIcon {
+  color: var(--color-primary);
+  opacity: 0.20;
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.quote {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-on-surface);
+  font-style: italic;
+  flex: 1;
+}
+
+/* ── AUTHOR ────────────────────────────────────────────────── */
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-style: normal;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+.photo {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  object-position: top;
+  flex-shrink: 0;
+}
+
+.avatarInitials {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatarInitials span {
+  font-family: var(--font-heading);
+  font-size: var(--text-body-md);
+  font-weight: var(--weight-bold);
+  color: #FFFFFF;
+}
+
+.authorName {
+  display: block;
+  font-size: var(--text-body-md);
+  font-weight: var(--weight-semibold);
+  color: var(--color-on-surface);
+  font-style: normal;
+}
+
+.authorRole {
+  display: block;
+  font-size: var(--text-body-sm);
+  color: var(--color-secondary);
+  margin-top: var(--space-1);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+}

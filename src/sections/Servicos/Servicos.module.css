@@ -1,0 +1,119 @@
+.section {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-surface);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+/* ── CARD ─────────────────────────────────────────────────── */
+.card {
+  background-color: var(--color-background);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: var(--shadow-1);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.card.primary::before {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+.card.secondary::before {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-tertiary));
+}
+
+.card:hover {
+  box-shadow: var(--shadow-4);
+  transform: translateY(-4px);
+}
+
+/* ── CARD ELEMENTS ────────────────────────────────────────── */
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary .cardIcon {
+  background-color: var(--color-primary-container);
+  color: var(--color-primary);
+}
+
+.secondary .cardIcon {
+  background-color: var(--color-secondary-container);
+  color: var(--color-secondary);
+}
+
+.cardEyebrow {
+  font-size: var(--text-label-lg);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.primary .cardEyebrow { color: var(--color-primary); }
+.secondary .cardEyebrow { color: var(--color-secondary); }
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-headline-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-on-surface);
+  margin-top: var(--space-1);
+}
+
+.cardDesc {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-on-surface-variant);
+  flex: 1;
+}
+
+/* Features list */
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-block: var(--space-2);
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-body-md);
+  color: var(--color-on-surface-variant);
+}
+
+.primary .featureItem svg { color: var(--color-primary); }
+.secondary .featureItem svg { color: var(--color-secondary); }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

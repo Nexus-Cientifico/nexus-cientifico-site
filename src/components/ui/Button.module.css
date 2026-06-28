@@ -1,0 +1,126 @@
+/* Button — CSS Module */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-label-lg);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+  user-select: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ── VARIANTES ──────────────────────────────────────────────── */
+
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: var(--shadow-2);
+}
+.primary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-3);
+  text-decoration: none;
+  color: var(--color-on-primary);
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+  box-shadow: var(--shadow-2);
+}
+.secondary:hover {
+  background-color: var(--color-secondary-hover);
+  box-shadow: var(--shadow-3);
+  text-decoration: none;
+  color: var(--color-on-secondary);
+}
+
+.outlined {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.outlined:hover {
+  background-color: var(--color-primary-container);
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: transparent;
+}
+.ghost:hover {
+  background-color: var(--color-surface);
+  text-decoration: none;
+}
+
+.accent {
+  background-color: var(--color-tertiary);
+  color: var(--color-on-tertiary);
+  box-shadow: var(--shadow-2);
+}
+.accent:hover {
+  background-color: var(--color-tertiary-hover);
+  box-shadow: var(--shadow-3);
+  text-decoration: none;
+  color: var(--color-on-tertiary);
+}
+
+/* Variante para uso em fundos escuros */
+.outlinedLight {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.outlinedLight:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* ── TAMANHOS ────────────────────────────────────────────────── */
+
+.sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-label-md);
+  border-radius: var(--radius-sm);
+}
+
+.md {
+  padding: 0.625rem var(--space-6);
+  min-height: 44px; /* Acessibilidade: touch target mínimo */
+}
+
+.lg {
+  padding: 0.875rem var(--space-8);
+  font-size: var(--text-title-md);
+  min-height: 52px;
+  border-radius: var(--radius-lg);
+}

@@ -1,0 +1,116 @@
+.section {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-surface);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 780px;
+  margin-inline: auto;
+  margin-bottom: var(--space-16);
+}
+
+/* ── STEP ─────────────────────────────────────────────────── */
+.step {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+}
+
+.stepLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-container);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-2);
+}
+
+.connector {
+  width: 2px;
+  flex: 1;
+  min-height: var(--space-8);
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  opacity: 0.25;
+  margin-block: var(--space-2);
+}
+
+.stepContent {
+  padding-bottom: var(--space-8);
+  flex: 1;
+}
+
+.stepNumber {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.stepTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-headline-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-2);
+}
+
+.stepDesc {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-on-surface-variant);
+  max-width: 55ch;
+}
+
+/* ── CTA ──────────────────────────────────────────────────── */
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  padding: var(--space-12);
+  background-color: var(--color-primary-container);
+  border-radius: var(--radius-xl);
+}
+
+.ctaText {
+  font-family: var(--font-heading);
+  font-size: var(--text-headline-sm);
+  color: var(--color-on-primary-container);
+  font-weight: var(--weight-bold);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .step {
+    gap: var(--space-4);
+  }
+
+  .iconWrapper {
+    width: 44px;
+    height: 44px;
+  }
+}

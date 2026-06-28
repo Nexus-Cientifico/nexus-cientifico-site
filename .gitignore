@@ -1,0 +1,26 @@
+# Dependências
+node_modules/
+
+# Build
+dist/
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Caches de deploy
+.netlify/
+.wrangler/
+.cloudflare/
+
+# Claude Code (configurações locais)
+.claude/settings.local.json

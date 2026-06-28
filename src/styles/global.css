@@ -1,0 +1,148 @@
+/* ============================================================
+   GLOBAL CSS — Editora Nexus Científico
+   Reset + base styles + utilities
+   ============================================================ */
+
+@import './tokens.css';
+
+/* ── RESET ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-on-surface);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── TYPOGRAPHY BASE ─────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: var(--leading-tight);
+  color: var(--color-on-surface);
+}
+
+h1 { font-size: var(--text-headline-lg); font-weight: var(--weight-bold); }
+h2 { font-size: var(--text-headline-md); font-weight: var(--weight-bold); }
+h3 { font-size: var(--text-headline-sm); font-weight: var(--weight-semibold); }
+h4 { font-size: var(--text-title-lg); font-weight: var(--weight-semibold); }
+h5 { font-size: var(--text-title-md); font-weight: var(--weight-medium); }
+h6 { font-size: var(--text-title-sm); font-weight: var(--weight-medium); }
+
+p {
+  line-height: var(--leading-normal);
+  color: var(--color-on-surface-variant);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── MEDIA ────────────────────────────────────────────────────── */
+img, video, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── FORM ELEMENTS ────────────────────────────────────────────── */
+input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ── UTILITIES ────────────────────────────────────────────────── */
+
+/* Container centralizado */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+/* Acessibilidade: oculto visualmente mas lido por leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus ring global */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Texto de destaque */
+.text-primary   { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-tertiary  { color: var(--color-tertiary); }
+.text-muted     { color: var(--color-on-surface-variant); }
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-outline-variant);
+  margin-block: var(--space-8);
+}
+
+/* Animação de entrada suave */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s var(--ease-decelerate) both;
+}
+
+/* Scroll margin para ancoras com header fixo */
+[id] {
+  scroll-margin-top: 80px;
+}

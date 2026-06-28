@@ -1,0 +1,93 @@
+.section {
+  position: relative;
+  padding-block: var(--space-24);
+  background-color: var(--color-primary);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* ── BACKGROUND ORBS ─────────────────────────────────────────── */
+.background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13,92,99,0.4) 0%, transparent 70%);
+  top: -150px;
+  right: -100px;
+}
+
+.orb2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,134,11,0.2) 0%, transparent 70%);
+  bottom: -100px;
+  left: -80px;
+}
+
+/* ── CONTENT ─────────────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-tertiary);
+}
+
+.headline {
+  font-family: var(--font-heading);
+  font-size: var(--text-display-sm);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: #FFFFFF;
+  max-width: 14ch;
+  margin: 0 auto;
+}
+
+.body {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.80);
+  max-width: 58ch;
+}
+
+.ctas {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+.note {
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.50);
+  letter-spacing: 0.02em;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section { padding-block: var(--space-16); }
+  .headline { font-size: var(--text-headline-lg); }
+  .ctas { flex-direction: column; align-items: stretch; }
+}

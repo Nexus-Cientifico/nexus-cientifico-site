@@ -1,0 +1,105 @@
+/**
+ * Page.module.css — estilos base compartilhados por todas as páginas internas (stub).
+ * Aplica padding-top para compensar o Header fixo de 72px.
+ */
+
+.page {
+  min-height: 100svh;
+  padding-top: calc(var(--header-height, 72px) + var(--space-16));
+  padding-bottom: var(--space-24);
+}
+
+.content {
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-display-sm);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-6);
+}
+
+.lead {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-on-surface-variant);
+  max-width: 65ch;
+  margin-bottom: var(--space-10);
+}
+
+/* ── COMING SOON STATE ────────────────────────────────────────── */
+.comingSoon {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-10);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+  color: var(--color-on-surface-variant);
+  font-size: var(--text-body-lg);
+}
+
+/* ── PUBLICAR PAGE SPECIFICS ──────────────────────────────────── */
+.infoBox {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.infoTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-title-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-5);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-left: var(--space-5);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-on-surface-variant);
+}
+
+.steps li::marker {
+  color: var(--color-primary);
+  font-weight: var(--weight-bold);
+}
+
+.emailLink {
+  color: var(--color-secondary);
+  font-weight: var(--weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cta {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .title { font-size: var(--text-headline-lg); }
+  .cta { flex-direction: column; }
+}
