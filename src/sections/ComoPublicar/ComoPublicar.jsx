@@ -22,13 +22,13 @@ const STEPS = [
   {
     number: '03',
     title: 'Edição',
-    description: 'Após aprovado, nossa equipe realiza a edição, diagramação e normalização conforme padrões ABNT e normas internacionais.',
+    description: 'Após aprovado, nossa equipe realiza a edição, diagramação e normalização conforme normas internacionais.',
     icon: <EditIcon />,
   },
   {
     number: '04',
     title: 'Publicação',
-    description: 'Sua obra é publicada com ISBN/ISSN, DOI e disponibilizada em plataformas acadêmicas. Atualiza automaticamente o Currículo Lattes.',
+    description: 'Sua obra é publicada com ISBN/ISSN, DOI e disponibilizada em plataformas acadêmicas.',
     icon: <PublishIcon />,
   },
 ]

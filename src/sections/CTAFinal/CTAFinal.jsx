@@ -19,9 +19,7 @@ export default function CTAFinal() {
           Sua pesquisa merece<br />ser publicada.
         </h2>
         <p className={styles.body}>
-          Estudantes, pós-graduandos, professores, pesquisadores e profissionais
-          de todas as áreas são bem-vindos. A Nexus Científico está com chamada
-          aberta para submissão de artigos e capítulos de livros.
+          Estamos com chamada aberta para submissão de artigos para a Revista Nexus Científico.
         </p>
         <div className={styles.ctas}>
           <Button href="/publicar" variant="accent" size="lg">
