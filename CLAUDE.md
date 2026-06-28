@@ -1,12 +1,48 @@
 # CLAUDE.md — Nexus Científico Site
 
-Site institucional da Editora Nexus Científico. React 18 + Vite 5 SPA, zero dependências de UI externas, sistema de design próprio via CSS Custom Properties + CSS Modules.
+Site institucional da Editora Nexus Científico. React 18 + Vite 6 SPA, zero dependências de UI externas, sistema de design próprio via CSS Custom Properties + CSS Modules.
+
+## Fluxo de trabalho — dia a dia
+
+### Branches
+
+| Branch | Para quê | O que o CI faz |
+|--------|----------|----------------|
+| `develop` | Trabalho em andamento (Christine) | Só valida o build |
+| `main` | Código em produção | Valida build + faz deploy |
+
+### Regra de ouro
+
+**Nunca trabalhe direto no `main`.** Sempre evolua o projeto no `develop`.
+
+```
+develop → (Claude Code valida) → merge para main → deploy automático
+```
+
+### Passo a passo para a Christine
+
+1. Certifique-se de estar no branch `develop`:
+   ```bash
+   git checkout develop
+   ```
+2. Faça as alterações com o Claude Code normalmente
+3. Quando estiver satisfeita, peça ao Claude Code para publicar:
+   > "publica no site" ou "faz o deploy"
+
+   O Claude Code vai: rodar build local → merge para main → deploy dispara automaticamente
+
+### O que acontece se o build quebrar
+
+- O site antigo **continua no ar** — nada é tirado do ar
+- GitHub envia e-mail de falha com link para os logs
+- O erro fica isolado no `develop` — o `main` não é afetado
+- Corrija com o Claude Code e repita o passo 3
 
 ## Comandos essenciais
 
 ```bash
 npm run dev       # dev server: http://localhost:5173
-npm run build     # produção → dist/
+npm run build     # produção → dist/ (rode antes de publicar para checar erros)
 npm run lint      # ESLint no src/
 ```
 
@@ -79,16 +115,20 @@ Arquivo: `src/styles/tokens.css`
 | Sombra | `--shadow-*` | `--shadow-2` |
 | Transição | `--transition-*` | `--transition-base: 250ms` |
 
-## CI/CD
+## CI/CD — Cloudflare Pages
 
-**Arquivo:** `.github/workflows/deploy.yml`
+O pipeline tem dois jobs separados:
 
-- Push para `main` → build + deploy automático no Cloudflare Pages
-- Pull requests → preview URL postada como comentário
+| Job | Roda em | Condição |
+|-----|---------|----------|
+| `Build` | `main`, `develop`, PRs | Sempre |
+| `Deploy` | `main` apenas | Só se `Build` passou |
 
-**Secrets GitHub necessários:**
-- `CLOUDFLARE_API_TOKEN` — permissão `Cloudflare Pages:Edit`
-- `CLOUDFLARE_ACCOUNT_ID` — ID da conta Cloudflare
+**Versões fixadas:** Node 22, wrangler 4 — não atualizam sozinhas e não quebram por surpresa.
+
+**Secrets no repositório GitHub** (já configurados):
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
 
 ## Imagens da equipe
 
@@ -98,7 +138,7 @@ Armazenadas em `public/images/equipe/`. Referenciadas em `src/data/team.js` como
 
 Decisões de arquitetura documentadas em `docs/adr/`:
 
-- `001-tech-stack.md` — React 18 + Vite 5
+- `001-tech-stack.md` — React 18 + Vite
 - `002-design-system.md` — CSS Custom Properties + CSS Modules (vs Tailwind/MUI)
 - `003-hosting-strategy.md` — histórico Netlify (supersedido por ADR-005)
 - `004-project-structure.md` — atomic design adaptado
