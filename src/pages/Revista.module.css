@@ -1,0 +1,278 @@
+/**
+ * Revista.module.css — página da Revista Nexus Científico
+ */
+
+/* ── PAGE ────────────────────────────────────────────────────────── */
+.page {
+  min-height: 100svh;
+  background-color: var(--color-background);
+}
+
+/* ── HERO ────────────────────────────────────────────────────────── */
+.hero {
+  padding-top: calc(var(--header-height, 72px) + var(--space-16));
+  padding-bottom: var(--space-12);
+  background: linear-gradient(160deg, #e8f4f0 0%, #ffffff 60%);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-display-sm);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-5);
+}
+
+.heroLead {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-on-surface-variant);
+  max-width: 60ch;
+}
+
+/* ── ACERVO ──────────────────────────────────────────────────────── */
+.acervo {
+  padding: var(--space-12) 0 var(--space-4);
+}
+
+.acervoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-10);
+  background: var(--color-background);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.acervoCard:hover {
+  box-shadow: var(--shadow-3, 0 4px 24px rgba(13,92,99,0.10));
+  border-color: var(--color-secondary-container, #b2dfdb);
+}
+
+.acervoLeft {
+  display: flex;
+  gap: var(--space-6);
+  flex: 1;
+  min-width: 0;
+}
+
+.acervoIcon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-secondary-container, #e0f2f1);
+  color: var(--color-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.acervoBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.acervoEyebrow {
+  font-size: var(--text-label-md);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin: 0 0 var(--space-2);
+}
+
+.acervoTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-headline-sm);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  color: var(--color-on-surface);
+  margin: 0 0 var(--space-4);
+}
+
+.acervoDesc {
+  font-size: var(--text-body-md);
+  line-height: var(--leading-relaxed);
+  color: var(--color-on-surface-variant);
+  margin: 0 0 var(--space-5);
+  max-width: 62ch;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px var(--space-3);
+  background: var(--color-secondary-container, #e0f2f1);
+  color: var(--color-secondary);
+  font-size: var(--text-label-sm);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+}
+
+/* ── ZENODO BUTTON ───────────────────────────────────────────────── */
+.acervoActions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  padding-top: var(--space-1);
+}
+
+.zenodoBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-secondary);
+  color: var(--color-on-secondary, #fff);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: var(--weight-semibold);
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(13,92,99,0.18);
+}
+
+.zenodoBtn:hover {
+  background: var(--color-secondary-hover, #0a4a50);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13,92,99,0.28);
+  text-decoration: none;
+  color: var(--color-on-secondary, #fff);
+}
+
+.zenodoBtnLabel {
+  display: block;
+  font-size: var(--text-label-lg);
+  line-height: 1.2;
+}
+
+.zenodoBtnSub {
+  display: block;
+  font-size: var(--text-label-sm);
+  font-weight: var(--weight-regular);
+  opacity: 0.82;
+  line-height: 1.2;
+}
+
+/* ── CHAMADA ABERTA ──────────────────────────────────────────────── */
+.callSection {
+  padding: var(--space-12) 0 var(--space-16);
+}
+
+.callBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-10);
+  padding: var(--space-8) var(--space-10);
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8f4f0 100%);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+  flex-wrap: wrap;
+}
+
+.callText {
+  flex: 1;
+  min-width: 260px;
+}
+
+.callEyebrow {
+  display: inline-block;
+  font-size: var(--text-label-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.callTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-headline-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-snug);
+}
+
+.callDesc {
+  font-size: var(--text-body-md);
+  line-height: var(--leading-relaxed);
+  color: var(--color-on-surface-variant);
+  max-width: 52ch;
+  margin: 0;
+}
+
+.callActions {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.callNote {
+  font-size: var(--text-body-sm);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .acervoCard {
+    flex-direction: column;
+  }
+  .acervoActions {
+    width: 100%;
+  }
+  .zenodoBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: var(--text-headline-lg);
+  }
+  .acervoLeft {
+    flex-direction: column;
+  }
+  .callBox {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-6);
+  }
+  .callActions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: var(--text-headline-md);
+  }
+}
