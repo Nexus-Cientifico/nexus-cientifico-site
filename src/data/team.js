@@ -31,7 +31,7 @@ export const team = [
     name: 'Antonia Maria de Matos',
     role: 'Conselheira Editorial',
     isDirector: false,
-    bio: 'Profissional com sólida formação na intersecção entre gestão organizacional e educação superior. Mestranda em Educação, aporta ao conselho editorial um olhar estratégico e pedagógico sobre a produção científica nas áreas de administração e docência.',
+    bio: 'Especialista em Administração e Logística e em Docência do Ensino Superior, atualmente Mestranda em Educação. Integra o conselho editorial trazendo experiência prática nas áreas de gestão e formação docente.',
     specialties: [
       'Administração & Logística',
       'Docência do Ensino Superior',
