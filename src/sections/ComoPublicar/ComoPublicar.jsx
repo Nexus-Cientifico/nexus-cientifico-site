@@ -16,7 +16,7 @@ const STEPS = [
   {
     number: '02',
     title: 'Avaliação',
-    description: 'Seu trabalho passa por avaliação editorial. Para a Revista, aplicamos revisão por pares duplo-cega com especialistas da área.',
+    description: 'Seu trabalho passa por avaliação editorial. Para a Revista, aplicamos revisão por pares duplo-cega.',
     icon: <ReviewIcon />,
   },
   {

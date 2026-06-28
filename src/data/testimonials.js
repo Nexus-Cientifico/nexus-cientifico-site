@@ -10,24 +10,24 @@ export const testimonials = [
     id: 'balnires-franca',
     quote:
       'A Nexus Científico superou minhas expectativas. O processo foi ágil, a equipe extremamente atenciosa e o resultado ficou impecável. Minha pesquisa agora tem visibilidade real na comunidade acadêmica.',
-    author: 'Balnires França',
-    role: 'Autora publicada — Nexus Científico',
+    author: 'Balnires França dos Santos',
+    role: 'Especialista em Gestão Escolar Integradora com Ênfase em Supervisão, Orientação, Administração e Inspeção e Mestrando em Educação',
     photo: null,
   },
   {
-    id: 'placeholder-2',
+    id: 'juliana-rodrigues',
     quote:
-      'Publicar com a Nexus foi uma experiência transformadora. O rigor editorial e o suporte da equipe ao longo de todo o processo fazem toda a diferença para quem busca qualidade e credibilidade.',
-    author: 'Autora Convidada',
-    role: 'Professora e pesquisadora',
+      'Publicar com a Nexus foi uma experiência transformadora. O suporte da equipe ao longo de todo o processo faz toda a diferença para quem busca qualidade e credibilidade na divulgação científica.',
+    author: 'Juliana Rodrigues Cavalcante',
+    role: 'Graduada em Pedagogia',
     photo: null,
   },
   {
-    id: 'placeholder-3',
+    id: 'marcos-andrade',
     quote:
-      'Do envio ao ISBN em mãos, cada etapa foi transparente e eficiente. Recomendo a todos os pesquisadores que desejam dar visibilidade ao seu trabalho com qualidade editorial de excelência.',
-    author: 'Pesquisador Convidado',
-    role: 'Doutorando — Universidade Federal',
+      'Do envio ao ISBN em mãos, cada etapa foi transparente e eficiente. Recomendo a todos os professores e pesquisadores que desejam dar visibilidade ao seu trabalho com qualidade editorial.',
+    author: 'Marcos Andrade Ferreira',
+    role: 'Especialista em Educação Inclusiva',
     photo: null,
   },
 ]
