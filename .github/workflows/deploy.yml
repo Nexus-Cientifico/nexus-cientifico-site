@@ -61,3 +61,22 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Registrar www.nexuscientifico.com.br no Pages
+        run: |
+          RESULT=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/nexus-cientifico-site/domains" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{"name":"www.nexuscientifico.com.br"}')
+          echo "Status da API: $RESULT"
+          if [ "$RESULT" = "409" ]; then
+            echo "www já estava registrado (OK)"
+          elif [ "$RESULT" = "200" ] || [ "$RESULT" = "201" ]; then
+            echo "www registrado com sucesso"
+          else
+            echo "Aviso: status inesperado $RESULT (pode precisar de ação manual)"
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
