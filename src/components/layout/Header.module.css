@@ -143,6 +143,9 @@
   pointer-events: auto;
 }
 
+/* No mobile: usar max-height em vez de display:block para não
+   criar bloco branco visível quando o menu está fechado */
+
 .mobileNavLink {
   display: block;
   font-size: var(--text-title-md);
@@ -184,5 +187,18 @@
 
   .mobileMenu {
     display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    transform: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height 0.28s ease, padding 0.28s ease;
+  }
+
+  .mobileMenuOpen {
+    max-height: 420px;
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-6);
   }
 }
