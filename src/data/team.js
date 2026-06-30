@@ -14,6 +14,7 @@ export const team = [
     specialties: [
       'Gestão Escolar & Supervisão',
       'Psicopedagogia',
+      'Docência no Ensino Superior',
     ],
     photo: '/images/equipe/christiane.jpeg',
   },
