@@ -62,57 +62,26 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
-      - name: Diagnostico conta Cloudflare
+      - name: Registrar dominios customizados no Pages
         run: |
-          echo "=== Conta usada pelo token ==="
-          curl -s "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID" \
-            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-            | jq -r '"Nome: " + (.result.name // "N/A"), "ID: " + (.result.id // "N/A"), "Erros: " + (.errors | tostring)'
-
-          echo ""
-          echo "=== Zonas DNS nessa conta ==="
-          curl -s "https://api.cloudflare.com/client/v4/zones?account.id=$CLOUDFLARE_ACCOUNT_ID" \
-            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-            | jq -r '.result[] | "- " + .name + " | " + .id' \
-            || echo "Nenhuma zona ou erro ao buscar"
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-
-      - name: Configurar www.nexuscientifico.com.br
-        run: |
-          echo "=== 1. Registrar www como dominio customizado no Pages ==="
-          PAGES_RESULT=$(curl -s -w "\nHTTP:%{http_code}" -X POST \
+          echo "=== Registrar nexuscientifico.com.br (apex) no Pages ==="
+          curl -s -X POST \
             "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/nexus-cientifico-site/domains" \
             -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
             -H "Content-Type: application/json" \
-            --data '{"name":"www.nexuscientifico.com.br"}')
-          PAGES_STATUS=$(echo "$PAGES_RESULT" | grep "HTTP:" | cut -d: -f2)
-          echo "Pages API status: $PAGES_STATUS"
-          echo "$PAGES_RESULT" | head -5
+            --data '{"name":"nexuscientifico.com.br"}' | python3 -c "import sys,json; d=json.load(sys.stdin); print('apex:', d.get('success'), d.get('errors'))"
 
-          echo ""
-          echo "=== 2. Buscar Zone ID do dominio ==="
-          ZONE_RESP=$(curl -s \
-            "https://api.cloudflare.com/client/v4/zones?name=nexuscientifico.com.br" \
-            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN")
-          ZONE_ID=$(echo "$ZONE_RESP" | python3 -c "import sys,json; data=json.load(sys.stdin); print(data['result'][0]['id'] if data.get('result') else 'NOT_FOUND')" 2>/dev/null)
-          echo "Zone ID: $ZONE_ID"
+          echo "=== Registrar www.nexuscientifico.com.br no Pages ==="
+          curl -s -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/nexus-cientifico-site/domains" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{"name":"www.nexuscientifico.com.br"}' | python3 -c "import sys,json; d=json.load(sys.stdin); print('www:', d.get('success'), d.get('errors'))"
 
-          if [ "$ZONE_ID" != "NOT_FOUND" ] && [ -n "$ZONE_ID" ]; then
-            echo ""
-            echo "=== 3. Criar CNAME www -> nexus-cientifico-site.pages.dev ==="
-            DNS_RESULT=$(curl -s -w "\nHTTP:%{http_code}" -X POST \
-              "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records" \
-              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-              -H "Content-Type: application/json" \
-              --data '{"type":"CNAME","name":"www","content":"nexus-cientifico-site.pages.dev","proxied":true}')
-            DNS_STATUS=$(echo "$DNS_RESULT" | grep "HTTP:" | cut -d: -f2)
-            echo "DNS API status: $DNS_STATUS"
-            echo "$DNS_RESULT" | head -3
-          else
-            echo "Zone nao encontrada com este token — DNS precisara ser adicionado manualmente"
-          fi
+          echo "=== Dominios registrados no Pages ==="
+          curl -s \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/nexus-cientifico-site/domains" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" | python3 -c "import sys,json; d=json.load(sys.stdin); [print(x.get('name'), x.get('status')) for x in (d.get('result') or [])]"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
