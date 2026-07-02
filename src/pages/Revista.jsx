@@ -26,6 +26,65 @@ export default function Revista() {
         </div>
       </section>
 
+      {/* ── ARTIGO PUBLICADO ────────────────────────────────────── */}
+      <section className={styles.published}>
+        <div className="container">
+          <div className={styles.articleCard}>
+            <div className={styles.articleTop}>
+              <span className={styles.publishedBadge}>
+                <CheckIcon />
+                Publicado pela Revista Nexus Científico
+              </span>
+              <span className={styles.articleDate}>Julho de 2026 · Edição em formação</span>
+            </div>
+
+            <h2 className={styles.articleTitle}>
+              A Cibercognição como Novo Paradigma Epistemológico
+            </h2>
+            <p className={styles.articleSubtitle}>
+              Inteligência Artificial Generativa e a Dissolução da Fronteira Ontológica
+              entre Cognição Humana e Cognição Artificial no Processo de Ensino-Aprendizagem
+            </p>
+            <p className={styles.articleAuthor}>Juliana Franciso de Oliveira</p>
+
+            <p className={styles.articleAbstract}>
+              O artigo propõe a cibercognição como novo paradigma epistemológico para
+              fundamentar a relação pedagógica na era pós-humana das inteligências
+              artificiais generativas, articulando epistemologia da educação, estudos de
+              ciência e tecnologia (STS) e filosofia da mente expandida.
+            </p>
+
+            <div className={styles.articleMeta}>
+              <span className={styles.metaItem}>DOI: 10.5281/zenodo.21138167</span>
+              <span className={styles.metaDot}>·</span>
+              <span className={styles.metaItem}>Acesso Aberto</span>
+              <span className={styles.metaDot}>·</span>
+              <span className={styles.metaItem}>CC BY 4.0</span>
+            </div>
+
+            <div className={styles.articleActions}>
+              <a
+                href="https://doi.org/10.5281/zenodo.21138167"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.articleBtnPrimary}
+              >
+                Ler Artigo Completo
+                <ExternalIcon />
+              </a>
+              <a
+                href="https://zenodo.org/records/21138167/files/Artigo%20Juliana-%20Revista%20Nexus%20Cientificopdf.pdf?download=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.articleBtnSecondary}
+              >
+                Baixar PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── ACERVO ZENODO ───────────────────────────────────────── */}
       <section className={styles.acervo}>
         <div className="container">
@@ -133,6 +192,14 @@ function ExternalIcon() {
       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
       <polyline points="15,3 21,3 21,9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
+function CheckIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   )
 }
