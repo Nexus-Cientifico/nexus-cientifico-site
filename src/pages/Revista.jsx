@@ -26,7 +26,7 @@ export default function Revista() {
         </div>
       </section>
 
-      {/* ── ARTIGO PUBLICADO ────────────────────────────────────── */}
+      {/* ── ARTIGOS PUBLICADOS ──────────────────────────────────── */}
       <section className={styles.published}>
         <div className="container">
           <div className={styles.articleCard}>
@@ -79,6 +79,97 @@ export default function Revista() {
                 className={styles.articleBtnSecondary}
               >
                 Baixar PDF
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.articleCard}>
+            <div className={styles.articleTop}>
+              <span className={styles.publishedBadge}>
+                <CheckIcon />
+                Publicado pela Revista Nexus Científico
+              </span>
+              <span className={styles.articleDate}>Julho de 2026 · Edição em formação</span>
+            </div>
+
+            <h2 className={styles.articleTitle}>
+              O Direito à Educação no Brasil Contemporâneo
+            </h2>
+            <p className={styles.articleSubtitle}>
+              Precarização Neoliberal, Resistência Social e a Centralidade do Estado
+              Democrático
+            </p>
+            <p className={styles.articleAuthor}>Daniel Luiz Miranda</p>
+
+            <p className={styles.articleAbstract}>
+              O artigo investiga as tensões contemporâneas na concretização do direito
+              à educação no Brasil, examinando como o avanço da racionalidade neoliberal
+              tem comprometido a efetividade dos direitos sociais garantidos pela
+              Constituição Federal de 1988.
+            </p>
+
+            <div className={styles.articleMeta}>
+              <span className={styles.metaItem}>DOI: 10.5281/zenodo.21193163</span>
+              <span className={styles.metaDot}>·</span>
+              <span className={styles.metaItem}>Acesso Aberto</span>
+              <span className={styles.metaDot}>·</span>
+              <span className={styles.metaItem}>CC BY 4.0</span>
+            </div>
+
+            <div className={styles.articleActions}>
+              <a
+                href="https://doi.org/10.5281/zenodo.21193163"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.articleBtnPrimary}
+              >
+                Ler Artigo Completo
+                <ExternalIcon />
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.articleCard}>
+            <div className={styles.articleTop}>
+              <span className={styles.publishedBadge}>
+                <CheckIcon />
+                Publicado pela Revista Nexus Científico
+              </span>
+              <span className={styles.articleDate}>Julho de 2026 · Edição em formação</span>
+            </div>
+
+            <h2 className={styles.articleTitle}>
+              Epistemologias Decoloniais e Educação Intercultural Crítica
+            </h2>
+            <p className={styles.articleSubtitle}>
+              Por uma Práxis Curricular Pluriversal nas Escolas Brasileiras
+            </p>
+            <p className={styles.articleAuthor}>Daniel Luiz Miranda</p>
+
+            <p className={styles.articleAbstract}>
+              O artigo examina as relações entre multiculturalismo, epistemologias
+              decoloniais e educação no contexto brasileiro, propondo os fundamentos
+              teóricos de uma educação intercultural crítica comprometida com o
+              reconhecimento e a valorização da pluralidade epistêmica e cultural.
+            </p>
+
+            <div className={styles.articleMeta}>
+              <span className={styles.metaItem}>DOI: 10.5281/zenodo.21193191</span>
+              <span className={styles.metaDot}>·</span>
+              <span className={styles.metaItem}>Acesso Aberto</span>
+              <span className={styles.metaDot}>·</span>
+              <span className={styles.metaItem}>CC BY 4.0</span>
+            </div>
+
+            <div className={styles.articleActions}>
+              <a
+                href="https://doi.org/10.5281/zenodo.21193191"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.articleBtnPrimary}
+              >
+                Ler Artigo Completo
+                <ExternalIcon />
               </a>
             </div>
           </div>
