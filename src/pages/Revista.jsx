@@ -361,7 +361,7 @@ export default function Revista() {
             </div>
             <div className={styles.callActions}>
               <Button
-                href="mailto:nexus.editora.cientifica@gmail.com"
+                href="mailto:revista@nexuscientifico.com.br"
                 variant="primary"
                 size="lg"
               >

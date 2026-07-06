@@ -22,19 +22,19 @@ function formatarData(data = '') {
     'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro',
   ]
   if (mes && dia) return `${parseInt(dia, 10)} de ${meses[parseInt(mes, 10) - 1]} de ${ano}`
-  if (mes)        return `${meses[parseInt(mes, 10) - 1]} de ${ano}`
+  if (mes) return `${meses[parseInt(mes, 10) - 1]} de ${ano}`
   return ano
 }
 
 function tipoLabel(tipo = '') {
   const mapa = {
-    'article':             'Artigo Científico',
+    'article': 'Artigo Científico',
     'publication-article': 'Artigo Científico',
-    'book':                'Livro',
-    'book-chapter':        'Capítulo de Livro',
-    'thesis':              'Dissertação / Tese',
-    'preprint':            'Preprint',
-    'publication':         'Publicação',
+    'book': 'Livro',
+    'book-chapter': 'Capítulo de Livro',
+    'thesis': 'Dissertação / Tese',
+    'preprint': 'Preprint',
+    'publication': 'Publicação',
   }
   return mapa[tipo] || 'Publicação'
 }
@@ -220,7 +220,7 @@ export default function ArtigoDetalhe() {
           <div className={styles.ctaBox}>
             <p className={styles.ctaText}>Deseja publicar na Revista Nexus Científico?</p>
             <a
-              href="mailto:nexus.editora.cientifica@gmail.com"
+              href="mailto:revista@nexuscientifico.com.br"
               className={styles.ctaLink}
             >
               Enviar proposta
