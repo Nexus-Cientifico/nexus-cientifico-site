@@ -28,9 +28,12 @@ export default function Hero() {
         </h1>
 
         <p className={styles.subheadline}>
-          A Editora Nexus Científico publica artigos, capítulos de livros e
-          revistas científicas com rigor editorial e alcance acadêmico.
-          Fortaleça seu currículo Lattes e amplie sua visibilidade científica.
+          A Nexus Científico conecta pesquisadores, profissionais e estudantes
+          para transformar conhecimento em publicações de impacto. Unimos
+          diferentes habilidades, da produção científica à normalização e
+          revisão, criando parcerias que fortalecem o Currículo Lattes,
+          ampliam a visibilidade acadêmica e valorizam a trajetória
+          profissional.
         </p>
 
         <div className={styles.ctas}>
