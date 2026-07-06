@@ -31,7 +31,7 @@ export const team = [
       'Fisiologia do Exercício',
     ],
     photo: '/images/equipe/valeria2.jpeg',
-    photoRotate: -17,
+    photoRotate: -9,
   },
   {
     id: 'antonia-matos',
