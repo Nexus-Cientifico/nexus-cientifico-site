@@ -26,12 +26,19 @@ export default function Equipe() {
   )
 }
 
-function MemberCard({ name, role, bio, photo, isDirector, specialties }) {
+function MemberCard({ name, role, bio, photo, isDirector, specialties, photoRotate }) {
   return (
     <article className={[styles.card, isDirector ? styles.director : ''].join(' ')}>
       <div className={styles.photoWrapper}>
         {photo
-          ? <img src={photo} alt={`Foto de ${name}`} className={styles.photo} />
+          ? (
+            <img
+              src={photo}
+              alt={`Foto de ${name}`}
+              className={styles.photo}
+              style={photoRotate ? { transform: `rotate(${photoRotate}deg) scale(1.15)` } : undefined}
+            />
+          )
           : <AvatarPlaceholder name={name} />
         }
         {isDirector && <span className={styles.badge}>Diretora Editorial</span>}
