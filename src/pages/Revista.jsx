@@ -173,6 +173,98 @@ export default function Revista() {
               </a>
             </div>
           </div>
+
+          <div className={styles.articleCard}>
+            <div className={styles.articleTop}>
+              <span className={styles.publishedBadge}>
+                <CheckIcon />
+                Publicado pela Revista Nexus Científico
+              </span>
+              <span className={styles.articleDate}>Julho de 2026 · Edição em formação</span>
+            </div>
+
+            <h2 className={styles.articleTitle}>
+              Entre a Normalização e a Insurgência
+            </h2>
+            <p className={styles.articleSubtitle}>
+              Uma Análise Crítica das Políticas de Educação Especial na Perspectiva
+              Inclusiva
+            </p>
+            <p className={styles.articleAuthor}>Danilo Bruno de Lima Nogueira</p>
+
+            <p className={styles.articleAbstract}>
+              O artigo examina as políticas de educação especial na perspectiva inclusiva
+              no Brasil, articulando a análise foucaultiana dos dispositivos de governo
+              com os estudos críticos da deficiência, e investiga como a inclusão escolar
+              pode, paradoxalmente, operar como tecnologia de normalização e controle
+              biopolítico da diferença.
+            </p>
+
+            <div className={styles.articleMeta}>
+              <span className={styles.metaItem}>DOI: 10.5281/zenodo.21220754</span>
+              <span className={styles.metaDot}>·</span>
+              <span className={styles.metaItem}>Acesso Aberto</span>
+              <span className={styles.metaDot}>·</span>
+              <span className={styles.metaItem}>CC BY 4.0</span>
+            </div>
+
+            <div className={styles.articleActions}>
+              <a
+                href="https://doi.org/10.5281/zenodo.21220754"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.articleBtnPrimary}
+              >
+                Ler Artigo Completo
+                <ExternalIcon />
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.articleCard}>
+            <div className={styles.articleTop}>
+              <span className={styles.publishedBadge}>
+                <CheckIcon />
+                Publicado pela Revista Nexus Científico
+              </span>
+              <span className={styles.articleDate}>Julho de 2026 · Edição em formação</span>
+            </div>
+
+            <h2 className={styles.articleTitle}>
+              Organizações Sociais de Educação e a Reconfiguração da Gestão Escolar
+            </h2>
+            <p className={styles.articleSubtitle}>
+              Uma Análise Crítica da Governança Neoliberal no Sistema Público de Ensino
+            </p>
+            <p className={styles.articleAuthor}>Danilo Bruno de Lima Nogueira</p>
+
+            <p className={styles.articleAbstract}>
+              O estudo investiga as Organizações Sociais de Educação (OSEs) no Brasil
+              como dispositivos de governança neoliberal que reconfiguram profundamente
+              as relações entre Estado, mercado e escola pública, examinando as lógicas,
+              os mecanismos e os efeitos da mercantilização da gestão educacional.
+            </p>
+
+            <div className={styles.articleMeta}>
+              <span className={styles.metaItem}>DOI: 10.5281/zenodo.21220875</span>
+              <span className={styles.metaDot}>·</span>
+              <span className={styles.metaItem}>Acesso Aberto</span>
+              <span className={styles.metaDot}>·</span>
+              <span className={styles.metaItem}>CC BY 4.0</span>
+            </div>
+
+            <div className={styles.articleActions}>
+              <a
+                href="https://doi.org/10.5281/zenodo.21220875"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.articleBtnPrimary}
+              >
+                Ler Artigo Completo
+                <ExternalIcon />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
