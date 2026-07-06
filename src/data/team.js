@@ -2,6 +2,8 @@
  * Dados da equipe editorial da Nexus Científico.
  * Para adicionar foto: coloque o arquivo em /public/images/equipe/
  * e preencha o campo `photo` com o caminho (ex: "/images/equipe/christiane.jpg").
+ * Campo opcional `photoRotate`: graus para corrigir fotos tiradas em ângulo
+ * (ex: selfies com a câmera inclinada), deixando o rosto nivelado no card.
  */
 
 export const team = [
@@ -29,6 +31,7 @@ export const team = [
       'Fisiologia do Exercício',
     ],
     photo: '/images/equipe/valeria2.jpeg',
+    photoRotate: -17,
   },
   {
     id: 'antonia-matos',
