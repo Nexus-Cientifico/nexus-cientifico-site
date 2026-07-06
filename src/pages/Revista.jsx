@@ -71,6 +71,14 @@ export default function Revista() {
                 Ler Artigo Completo
                 <ExternalIcon />
               </a>
+              <a
+                href="https://zenodo.org/records/21220875/files/com%20doi%20Danilo%20art%204.docx?download=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.articleBtnSecondary}
+              >
+                Baixar Artigo
+              </a>
             </div>
           </div>
 
@@ -118,6 +126,14 @@ export default function Revista() {
                 Ler Artigo Completo
                 <ExternalIcon />
               </a>
+              <a
+                href="https://zenodo.org/records/21220754/files/Danilo%20art%202.docx?download=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.articleBtnSecondary}
+              >
+                Baixar Artigo
+              </a>
             </div>
           </div>
 
@@ -162,6 +178,14 @@ export default function Revista() {
               >
                 Ler Artigo Completo
                 <ExternalIcon />
+              </a>
+              <a
+                href="https://zenodo.org/records/21193191/files/Art.%20Daniel%202.docx?download=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.articleBtnSecondary}
+              >
+                Baixar Artigo
               </a>
             </div>
           </div>
@@ -208,6 +232,14 @@ export default function Revista() {
               >
                 Ler Artigo Completo
                 <ExternalIcon />
+              </a>
+              <a
+                href="https://zenodo.org/records/21193163/files/Art.%20Daniel%201.docx?download=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.articleBtnSecondary}
+              >
+                Baixar Artigo
               </a>
             </div>
           </div>
