@@ -22,9 +22,9 @@ export default function Hero() {
         </div>
 
         <h1 className={styles.headline}>
-          Conectamos{' '}
-          <span className={styles.highlight}>Pesquisa</span>
-          {' '}e Conhecimento
+          Conectamos Pessoas,{' '}
+          <span className={styles.highlight}>Pesquisas</span>
+          {' '}e Conhecimentos
         </h1>
 
         <p className={styles.subheadline}>
