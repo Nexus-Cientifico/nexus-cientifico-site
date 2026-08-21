@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded", function () { var btn = document.querySelector(".menu-toggle"); var nav = document.querySelector("nav.main-nav"); if (btn && nav) { btn.addEventListener("click", function () { nav.classList.toggle("open"); }); } });
