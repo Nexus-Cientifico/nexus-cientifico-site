@@ -2,6 +2,8 @@
  * Dados da equipe editorial da Nexus Científico.
  * Para adicionar foto: coloque o arquivo em /public/images/equipe/
  * e preencha o campo `photo` com o caminho (ex: "/images/equipe/christiane.jpg").
+ * Campo opcional `photoRotate`: graus para corrigir fotos tiradas em ângulo
+ * (ex: selfies com a câmera inclinada), deixando o rosto nivelado no card.
  */
 
 export const team = [
@@ -10,7 +12,12 @@ export const team = [
     name: 'Christiane Cherkasov',
     role: 'Diretora Editorial',
     isDirector: true,
-    bio: 'Fundadora e diretora da Nexus Científico, responsável pela visão editorial e pelo desenvolvimento da plataforma de publicação acadêmica.',
+    bio: 'Fundadora e Diretora Editorial da Nexus Científico, responsável pela visão editorial e pelo desenvolvimento da plataforma de publicação acadêmica. Especialista em Gestão Escolar com Ênfase em Supervisão, Orientação, Administração e Inspeção, e em Psicopedagogia.',
+    specialties: [
+      'Gestão Escolar & Supervisão',
+      'Psicopedagogia',
+      'Docência no Ensino Superior',
+    ],
     photo: '/images/equipe/christiane.jpeg',
   },
   {
@@ -18,15 +25,24 @@ export const team = [
     name: 'Valéria Magalhães',
     role: 'Conselheira Editorial',
     isDirector: false,
-    bio: 'Conselheira editorial com expertise em avaliação de trabalhos acadêmicos e normatização científica.',
+    bio: 'Pesquisadora na interface entre ciência do exercício e saúde cardiovascular. Integra o conselho editorial com rigor clínico-científico e visão interdisciplinar.',
+    specialties: [
+      'Exercício Físico & Reabilitação Cardíaca',
+      'Fisiologia do Exercício',
+    ],
     photo: '/images/equipe/valeria2.jpeg',
+    photoRotate: -9,
   },
   {
     id: 'antonia-matos',
     name: 'Antonia Maria de Matos',
     role: 'Conselheira Editorial',
     isDirector: false,
-    bio: 'Conselheira editorial especialista em metodologia científica e normas internacionais de publicação.',
+    bio: 'Especialista em Administração e Logística e em Docência do Ensino Superior. Integra o conselho editorial trazendo experiência prática nas áreas de gestão e formação docente.',
+    specialties: [
+      'Administração & Logística',
+      'Docência do Ensino Superior',
+    ],
     photo: '/images/equipe/antonia.jpeg',
   },
   {
@@ -34,7 +50,12 @@ export const team = [
     name: 'Isabel Cristina Santos',
     role: 'Conselheira Editorial',
     isDirector: false,
-    bio: 'Conselheira editorial com ampla experiência em pesquisa acadêmica e gestão de publicações científicas.',
+    bio: 'Especialista em Gestão de Pessoas, Planejamento Tributário e Gestão Escolar. Integra o conselho editorial com uma visão ampla que une administração, finanças e educação.',
+    specialties: [
+      'Gestão de Pessoas',
+      'Planejamento Tributário',
+      'Gestão Escolar',
+    ],
     photo: '/images/equipe/isabel.jpeg',
   },
 ]

@@ -24,3 +24,6 @@ npm-debug.log*
 
 # Claude Code (configurações locais)
 .claude/settings.local.json
+
+# Accidental copy - not part of project
+public/images/Downloads/

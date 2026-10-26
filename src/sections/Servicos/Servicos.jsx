@@ -14,7 +14,7 @@ const SERVICES = [
     title: 'Livros Publicados',
     description:
       'Publique capítulos em coletâneas de artigos científicos e anais de eventos. Obra coletiva com ISBN, revisão editorial e disponibilização em plataformas acadêmicas.',
-    features: ['ISBN garantido', 'Revisão editorial', 'DOI por capítulo', 'Currículo Lattes'],
+    features: ['ISBN garantido', 'Ficha catalográfica', 'DOI por livro', 'Revisão editorial', 'Fortalece o Currículo Lattes'],
     cta: { label: 'Submeter Capítulo', href: '/livros' },
     accent: 'primary',
   },
@@ -25,7 +25,7 @@ const SERVICES = [
     title: 'Revista Nexus Científico',
     description:
       'Revista científica com revisão por pares, publicação contínua e indexação em bases acadêmicas. Aberta a pesquisadores de todas as áreas do conhecimento.',
-    features: ['Revisão por pares', 'Publicação contínua', 'Indexação acadêmica', 'Acesso aberto'],
+    features: ['ISSN registrado', 'Revisão por pares', 'DOI por artigo', 'Publicação contínua', 'Acesso aberto'],
     cta: { label: 'Submeter Artigo', href: '/revista' },
     accent: 'secondary',
   },

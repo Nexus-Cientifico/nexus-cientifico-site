@@ -1,0 +1,58 @@
+name: Sync Zenodo → Google Scholar
+
+# ── Quando roda ──────────────────────────────────────────────────
+# 1. Todo dia às 06:00 UTC (03:00 Brasília)
+# 2. Quando você publicar algo e quiser atualizar o site na hora
+#    → GitHub > Actions > "Sync Zenodo" > Run workflow
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    name: Sincronizar publicações
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # necessário para commitar o JSON atualizado
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Buscar publicações do Zenodo
+        run: node scripts/fetch-zenodo.mjs
+        env:
+          # Slug da comunidade Zenodo (ex: nexus-cientifico)
+          # Configure em: GitHub > Settings > Secrets > ZENODO_COMMUNITY_SLUG
+          ZENODO_COMMUNITY_SLUG: ${{ secrets.ZENODO_COMMUNITY_SLUG || 'nexus-cientifico' }}
+          ZENODO_AUTHOR_NAME: "Christiane Moura Cherkasov"
+
+      - name: Commitar publicações atualizadas
+        run: |
+          git config user.name  "Nexus Bot"
+          git config user.email "nexus.editora.cientifica@gmail.com"
+          git add src/data/publicacoes.json
+
+          if git diff --staged --quiet; then
+            echo "✓ Nenhuma publicação nova — deploy desnecessário."
+          else
+            COUNT=$(git diff --staged --stat | tail -1)
+            git commit -m "sync: publicações Zenodo $(date -u '+%Y-%m-%d') — $COUNT"
+            git push origin main
+            echo "✅ Publicações atualizadas e enviadas para o repositório."
+            echo "   O workflow deploy.yml será acionado automaticamente."
+          fi

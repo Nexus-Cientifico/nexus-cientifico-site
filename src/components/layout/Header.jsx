@@ -34,11 +34,11 @@ export default function Header() {
 
         {/* Logo */}
         <Link to="/" className={styles.logo} onClick={handleNavClick}>
-          <LogoMark />
-          <span className={styles.logoText}>
-            <span className={styles.logoNexus}>Nexus</span>
-            <span className={styles.logoCientifico}>Científico</span>
-          </span>
+          <img
+            src="/images/logo.png"
+            alt="Editora Nexus Científico"
+            className={styles.logoImg}
+          />
         </Link>
 
         {/* Nav desktop */}
@@ -103,18 +103,3 @@ export default function Header() {
   )
 }
 
-function LogoMark() {
-  return (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-      <rect width="36" height="36" rx="8" fill="var(--color-primary)" />
-      <path
-        d="M9 27V9l7 11 7-11v18"
-        stroke="#FFFFFF"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="27" cy="18" r="3.5" fill="var(--color-tertiary)" />
-    </svg>
-  )
-}

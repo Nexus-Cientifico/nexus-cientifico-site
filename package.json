@@ -2,13 +2,14 @@
   "name": "nexus-cientifico",
   "private": true,
   "version": "1.0.0",
-  "description": "Site institucional da Editora Nexus Científico",
+  "description": "Site institucional da Editora Nexus Cientifico",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-scholar-pages.mjs",
     "preview": "vite preview",
-    "lint": "eslint src --ext .jsx,.js"
+    "lint": "eslint src --ext .jsx,.js",
+    "sync-zenodo": "node scripts/fetch-zenodo.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

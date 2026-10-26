@@ -31,25 +31,14 @@
   opacity: 0.85;
 }
 
-.logoSvg { flex-shrink: 0; }
-
-.logoNexus {
+.logoImg {
+  height: 64px;
+  width: auto;
   display: block;
-  font-family: var(--font-heading);
-  font-size: 1.125rem;
-  font-weight: var(--weight-bold);
-  color: #FFFFFF;
-  line-height: 1.1;
-}
-
-.logoCientifico {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.6875rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-tertiary);
+  object-fit: contain;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 6px 12px;
 }
 
 .tagline {

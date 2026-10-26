@@ -26,12 +26,19 @@ export default function Equipe() {
   )
 }
 
-function MemberCard({ name, role, bio, photo, isDirector }) {
+function MemberCard({ name, role, bio, photo, isDirector, specialties, photoRotate }) {
   return (
     <article className={[styles.card, isDirector ? styles.director : ''].join(' ')}>
       <div className={styles.photoWrapper}>
         {photo
-          ? <img src={photo} alt={`Foto de ${name}`} className={styles.photo} />
+          ? (
+            <img
+              src={photo}
+              alt={`Foto de ${name}`}
+              className={styles.photo}
+              style={photoRotate ? { transform: `rotate(${photoRotate}deg) scale(1.15)` } : undefined}
+            />
+          )
           : <AvatarPlaceholder name={name} />
         }
         {isDirector && <span className={styles.badge}>Diretora Editorial</span>}
@@ -40,6 +47,13 @@ function MemberCard({ name, role, bio, photo, isDirector }) {
         <h3 className={styles.name}>{name}</h3>
         <span className={styles.role}>{role}</span>
         {bio && <p className={styles.bio}>{bio}</p>}
+        {specialties && specialties.length > 0 && (
+          <ul className={styles.specialties} aria-label="Especialidades">
+            {specialties.map(s => (
+              <li key={s} className={styles.specialty}>{s}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </article>
   )

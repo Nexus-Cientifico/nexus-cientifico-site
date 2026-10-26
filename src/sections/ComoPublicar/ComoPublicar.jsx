@@ -10,25 +10,25 @@ const STEPS = [
   {
     number: '01',
     title: 'Submissão',
-    description: 'Envie seu artigo ou capítulo por e-mail ou pelo formulário de submissão. Nossa equipe acusará o recebimento em até 48 horas.',
+    description: 'Envie seu artigo ou capítulo por e-mail. Nossa equipe acusará o recebimento em até 48 horas.',
     icon: <SubmitIcon />,
   },
   {
     number: '02',
     title: 'Avaliação',
-    description: 'Seu trabalho passa por avaliação editorial. Para a Revista, aplicamos revisão por pares duplo-cega com especialistas da área.',
+    description: 'Seu trabalho passa por avaliação editorial. Para a Revista, aplicamos revisão por pares duplo-cega.',
     icon: <ReviewIcon />,
   },
   {
     number: '03',
     title: 'Edição',
-    description: 'Após aprovado, nossa equipe realiza a edição, diagramação e normalização conforme padrões ABNT e normas internacionais.',
+    description: 'Após aprovado, nossa equipe realiza a edição, diagramação e normalização conforme normas internacionais.',
     icon: <EditIcon />,
   },
   {
     number: '04',
     title: 'Publicação',
-    description: 'Sua obra é publicada com ISBN/ISSN, DOI e disponibilizada em plataformas acadêmicas. Atualiza automaticamente o Currículo Lattes.',
+    description: 'Sua obra é publicada com ISBN/ISSN, DOI e disponibilizada em plataformas acadêmicas.',
     icon: <PublishIcon />,
   },
 ]
